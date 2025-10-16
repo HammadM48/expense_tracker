@@ -32,23 +32,49 @@ class _NewExpenseState extends State<NewExpense> {
             keyboardType: TextInputType.name,
             decoration: InputDecoration( label: Text('Title')),
           ),
-          TextField(
-            controller: _amountController,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(
-              prefixText: '\$',
-              label: Text("Amount"),
+          Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  controller: _amountController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    prefixText: '\$',
+                    label: Text("Amount"),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text("Selected Date"),
+                    IconButton
+                    (onPressed: () {},
+                    icon: const Icon(Icons.calendar_month),
             ),
-          ),
+          ],
+        ),
+      ),
+    ],
+  ),
           Row(
             children: [
               Spacer(),
-            ElevatedButton(
-              onPressed: () {
-                print(_titleController.text);
-                print(_amountController.text);
-                }, 
-                child: Text('Save expense'),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("cancel"),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  print(_titleController.text);
+                  print(_amountController.text);
+                  }, 
+                  child: Text('Save expense'),
               ),
             ],
           )
