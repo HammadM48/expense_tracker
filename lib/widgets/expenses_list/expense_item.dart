@@ -1,3 +1,4 @@
+import 'package:expense_tracker/main.dart';
 import 'package:expense_tracker/models/expense.dart';
 import 'package:flutter/material.dart';
 
@@ -6,12 +7,13 @@ class ExpenseItem extends StatelessWidget{
   final Expense expense;
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Card(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal:20, vertical: 10),
         child: Column(
           children: [
-            Text(expense.title),
+            Text(expense.title, style:ThemeData().textTheme.titleLarge,),
             const SizedBox(height: 4),
             Row(
               children: [
