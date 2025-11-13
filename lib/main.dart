@@ -30,7 +30,6 @@ void main() {
       appBarTheme: const AppBarTheme().copyWith(
         backgroundColor: kColorScheme.onPrimaryContainer,
         foregroundColor: kColorScheme.onPrimary,
-
       ),
       cardTheme: CardThemeData().copyWith(
         color: kColorScheme.secondaryContainer,
@@ -53,5 +52,7 @@ void main() {
       )
     ),
 
-    home: Expenses()));
+      home: Expenses(),
+    ),
+  );
 }
